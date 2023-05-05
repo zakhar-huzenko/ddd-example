@@ -1,0 +1,8 @@
+/.idea
+vendor
+/.docker/data/
+.php_cs.cache
+.php-cs-fixer.cache
+.phpunit.result.cache
+*.env
+*.log
