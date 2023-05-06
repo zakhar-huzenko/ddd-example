@@ -13,7 +13,7 @@ class AddProductRequestDto
 
     public function __construct(array $data)
     {
-        // ...
+        // stupid setters
     }
 
     public function getName(): string

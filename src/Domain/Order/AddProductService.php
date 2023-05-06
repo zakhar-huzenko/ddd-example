@@ -4,21 +4,31 @@ declare(strict_types=1);
 
 namespace Domain\Order;
 
-use Domain\Order\Contract\AddProductServiceInterface;
 use Domain\Order\Contract\Dto\AddProductRequestDto;
+use Domain\Order\Factory\ProductFactory;
 
-class AddProductService implements AddProductServiceInterface
+class AddProductService
 {
-    private OrderRepositoryInterface $orderRepository;
-    private ProductFactory $productFactory;
+    public function __construct(
+        private Order $order,
+        private ProductFactory $productFactory,
+        private AddProductRequestDto $addProductRequestDto,
+    ) {
+    }
 
-    public function addProduct(string $orderId, AddProductRequestDto $dto): void
+    public function addProduct(): Order
     {
-        $order = $this->orderRepository->findById($orderId);
-        $product = $this->productFactory->create($dto);
+        // How to get the entity from another context?
+        // For example, assign agent to order (information of agent is in User context)
 
-        $order->addProduct($product);
+        // ...
 
-        $this->orderRepository->update($order);
+        // here could be some validation by business rules or another business logic so this class is necessary
+
+        $product = $this->productFactory->create($this->addProductRequestDto);
+
+        $this->order->addProduct($product);
+
+        return $this->order;
     }
 }
