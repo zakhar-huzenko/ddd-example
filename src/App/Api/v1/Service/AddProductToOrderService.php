@@ -7,7 +7,7 @@ namespace App\Api\v1\Service;
 use Domain\Order\Contract\AddProductServiceInterface;
 use Domain\Order\Contract\Dto\AddProductRequestDto;
 
-class AddProductService
+class AddProductToOrderService
 {
     private AddProductServiceInterface $addProductDomainService;
 

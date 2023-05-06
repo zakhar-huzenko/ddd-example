@@ -6,6 +6,7 @@ namespace Domain\Order;
 
 use Domain\Order\Contract\AddProductServiceInterface;
 use Domain\Order\Contract\Dto\AddProductRequestDto;
+use Domain\Order\Product\Factory\ProductFactory;
 
 class AddProductService implements AddProductServiceInterface
 {
@@ -15,7 +16,12 @@ class AddProductService implements AddProductServiceInterface
     public function addProduct(string $orderId, AddProductRequestDto $dto): void
     {
         $order = $this->orderRepository->findById($orderId);
-        $product = $this->productFactory->create($dto);
+        $product = $this->productFactory->create(
+            $dto->getName(),
+            $dto->getDescription(),
+            $dto->getPrice(),
+            $dto->getQuantity(),
+        );
 
         $order->addProduct($product);
 
