@@ -12,13 +12,13 @@ class ProductFactory
         string $name,
         string $description,
         int $price,
-        int $quantity
+        int $quantity,
     ): Product {
         return new Product(
             $name,
             $description,
             $price,
-            $quantity
+            $quantity,
         );
     }
 }

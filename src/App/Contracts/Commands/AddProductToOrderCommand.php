@@ -2,18 +2,22 @@
 
 declare(strict_types=1);
 
-namespace Domain\Order\Contract\Dto;
+namespace App\Contracts\Commands;
 
-class AddProductRequestDto
+class AddProductToOrderCommand
 {
-    private string $name;
-    private string $description;
-    private int $price;
-    private int $quantity;
+    public function __construct(
+        private string $orderId,
+        private string $name,
+        private string $description,
+        private int $price,
+        private int $quantity,
+    ) {
+    }
 
-    public function __construct(array $data)
+    public function getOrderId(): string
     {
-        // ...
+        return $this->orderId;
     }
 
     public function getName(): string

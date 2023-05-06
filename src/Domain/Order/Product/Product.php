@@ -15,12 +15,12 @@ class Product
         string $name,
         string $description,
         int $price,
-        int $quantity
+        int $quantity,
     ) {
-        $this->name = $name;
-        $this->description = $description;
-        $this->price = $price;
         $this->quantity = $quantity;
+        $this->price = $price;
+        $this->description = $description;
+        $this->name = $name;
     }
 
     public function getName(): string

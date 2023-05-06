@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Domain\Order;
+namespace Infrastructure\Repository;
+
+use Domain\Order\Order;
 
 interface OrderRepositoryInterface
 {
