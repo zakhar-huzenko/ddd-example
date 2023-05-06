@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Domain\Order;
 
-use Domain\Order\Factory\ProductFactory;
+use Domain\Order\Product\Factory\ProductFactory;
 
 class AddProductService
 {
