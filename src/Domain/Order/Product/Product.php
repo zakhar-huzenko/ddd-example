@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Domain\Order\Product;
 
-final class Product
+class Product
 {
     private string $name;
     private string $description;
