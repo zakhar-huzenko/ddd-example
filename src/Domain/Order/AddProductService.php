@@ -21,9 +21,6 @@ class AddProductService
         int $quantity,
     ): Order
     {
-        // How to get the entity from another context?
-        // For example, assign agent to order (information of agent is in User context)
-
         // ...
 
         $product = $this->productFactory->create($name, $description, $price, $quantity);
